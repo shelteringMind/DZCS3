@@ -1,4 +1,4 @@
-﻿//*/
+﻿/*/
 //Задача 19
 
 string ReadNum(string text)
@@ -30,3 +30,32 @@ else
 {
     Console.Write("Вы ввели число, отличающееся от требуемого!");
 }
+//*/
+
+//*/
+//Задача 21
+
+int ReadInt(string text)
+{
+    System.Console.Write(text);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+double [] A=new double[3];
+double [] B=new double[3];
+
+A[0] = ReadInt("Введите координату x точки A: ");
+B[0] = ReadInt("Введите координату x точки B: ");
+A[1] = ReadInt("Введите координату y точки A: ");
+B[1] = ReadInt("Введите координату y точки B: ");
+A[2] = ReadInt("Введите координату z точки A: ");
+B[2] = ReadInt("Введите координату z точки B: ");
+
+double dist(double[] a,double[] b) {
+    double d = 0;
+    d = Math.Sqrt(Math.Pow((b[0]-a[0]),2) + Math.Pow((b[1]-a[1]),2) + Math.Pow((b[2]-a[2]),2));
+    return d;
+}
+
+System.Console.Write(dist(A,B));
+//*/
