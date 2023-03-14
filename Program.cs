@@ -32,7 +32,7 @@ else
 }
 //*/
 
-//*/
+/*/
 //Задача 21
 
 int ReadInt(string text)
@@ -58,4 +58,39 @@ double dist(double[] a,double[] b) {
 }
 
 System.Console.Write(dist(A,B));
+//*/
+
+//*/
+//Задача 23
+
+int ReadInt(string text)
+{
+    System.Console.Write(text);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int[] cubeNumber(int n)
+{
+    int k = 1;
+    if (n < 0) k = (int)Math.Pow(-1, 3);
+    n = Math.Abs(n);
+    int[] table = new int[n + 1];
+
+    for (int i = 1; i <= n; i++)
+    {
+        table[i - 1] = (int)Math.Pow(i, 3) * k;
+    }
+    return table;
+}
+
+int n = ReadInt("Введите число: ");
+int m = Math.Abs(n);
+int[] tableCube = new int[m + 1];
+System.Console.Write($"{n} -> ");
+tableCube = cubeNumber(n);
+for (int i = 1; i <= m; i++)
+{
+    System.Console.Write($"{tableCube[i - 1]}");
+    if (i < m) System.Console.Write(", ");
+}
 //*/
